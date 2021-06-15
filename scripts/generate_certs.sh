@@ -25,8 +25,7 @@ openssl genrsa -out ${TEMP}/${subjectAltName}.key 2048
 openssl req -nodes -newkey rsa:2048 \
     -keyout ${TEMP}/${subjectAltName}.key \
     -out ${TEMP}/${subjectAltName}.csr \
-    -subj "/C=${C}/ST=${ST}/L=${L}/O=${O}/CN=${CN}" \
-    -addext "subjectAltName=DNS:${subjectAltName}"
+    -subj "/C=${C}/ST=${ST}/L=${L}/O=${O}/CN=${CN}"
 
 # Generate the certificate using the mydomain csr and key along with the CA Root key
 openssl x509 -req -in ${TEMP}/${subjectAltName}.csr -CA ${TEMP}/ca.crt -CAkey ${TEMP}/ca.key -CAcreateserial \
