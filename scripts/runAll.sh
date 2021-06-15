@@ -7,6 +7,5 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-rm -f /tmp/*.{crt,key,csr,srl}
 ./scripts/generate_ca.sh
 ./scripts/generate_certs.sh ${subjectAltName}
