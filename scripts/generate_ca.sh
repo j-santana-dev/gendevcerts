@@ -11,9 +11,6 @@ expirationDays=36500
 # Create Root Key
 # This is the key used to sign the certificate requests
 
-# password protected:
-# openssl genrsa -des3 -out ca.key 4096
-
 # non password protected
 openssl genrsa -out ${TEMP}/ca.key 4096
 
